@@ -21,7 +21,7 @@ public class PasswordController : ControllerBase
         _passwordService = passwordService;
     }
 
-    [HttpPost]
+    [HttpPost("validate")]
     public async Task<IActionResult> ValidatePassword([FromBody] PasswordRequestDto request)
     {
         var errors = _passwordService.ValidatePassword(request.Password);
